@@ -16,6 +16,11 @@ Description: permet d'afficher dans une boite mondale les images d'une galerie a
 Nous ce qu'on doit faire cest perfectionner le systeme de navigation **
 
 */
+function carrousel_enqueue(){
+
+$version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
+$version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
+
 wp_enqueue_style(   'em_plugin_carrousel_css',
 plugin_dir_url(__FILE__) . "style.css",
 array(),
@@ -27,4 +32,18 @@ array(),
 $version_js,
 true);
 
+}
+
+add_action('wp_enqueue_scripts', 'caroussel_enqueue');
+
+function creation_carrousel(){
+return'<button class="bouton__ouvrir">Ouvrir</button>
+    <div class="carrousel">
+    <button class="bouton__x">X</button>
+    <figure class="carrousel__figure"></figure>
+    <form class="carrousel__form"></form>
+    </div>';  
+}
+
+add_shortcode('carrousel', 'creation_carrousel');
 ?>
