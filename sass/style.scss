@@ -1,17 +1,28 @@
-// la feuille de style du carroussel
+/*  la feuille de style du carrousel */
 
+/* Le conteneur principale du carrousel */
+.carrousel{
+    position: fixed;
+    width: 50%;
+    height : 50%;
+    top : 25%;
+    left: 25%;
+    transform: scale(0);
+    transition : transform .5s;
+    background-color: aquamarine;
+    /* opacity: ;
+ */
+}
 
-// le conteneur principale du carrousel
-.carrousel{}
+.carrousel--ouvrir {
+    transform : scale(1);
+}
 
-//bouton de fermeture de la boite modale
-.carrouselx{}
+/* bouton de fermeture de la boîte modale */
+.bouton__x {}
 
+/* conteneur des images du carrousel */
+.carrousel__figure{}
 
-//conteneur des images du carrousel
-.carrouselfigure{}
-
-
-// le conteneur des boutons radio qui permette de naviguer ds le caroussel
-
-.carrousel__form{}
+/* le conteneur des boutons radio */
+.carrousel__form {}
