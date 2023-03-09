@@ -21,4 +21,10 @@
 
 /* bouton de fermeture de la boîte modale */
 /* conteneur des images du carrousel */
+.carrousel__figure {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 /* le conteneur des boutons radio *//*# sourceMappingURL=style.css.map */
