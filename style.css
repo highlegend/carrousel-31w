@@ -5,8 +5,8 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
+  top: 25%;
+  left: 25%;
   transform: scale(0);
   transition: transform 0.5s;
   background-color: aquamarine;
@@ -14,7 +14,6 @@
   /* opacity: ;
   */
 }
-
 @media screen and (min-width: 500px) {
   .carrousel {
     width: 50%;
@@ -23,6 +22,7 @@
     left: 25%;
   }
 }
+
 .carrousel--ouvrir {
   transform: scale(1);
 }
@@ -34,7 +34,7 @@
   right: 10px;
   width: 40px;
   height: 40px;
-  border: 1px solid #aaa;
+  border: 5px solid #aaa;
   border-radius: 5px;
   z-index: 10;
 }
@@ -47,30 +47,19 @@
 }
 
 .carrousel__img {
-  display: block;
+  display: bl;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   opacity: 0;
   transition: opacity 0.5s;
-  object-fit: cover; /* couvre et redimensionne en mm temps tres efficace */
-  z-index: 9;
+  object-fit: cover; /*couvre et redimensionne en mm temps tres efficace  */
 }
 
 .carrousel__img--activer {
   opacity: 1;
 }
 
-/* le conteneur des boutons radio */
-.carrousel__form {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  z-index: 12;
-}/*# sourceMappingURL=style.css.map */
+/* le conteneur des boutons radio *//*# sourceMappingURL=style.css.map */

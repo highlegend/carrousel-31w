@@ -39,11 +39,12 @@ function carrousel_enqueue(){
     
     function creation_carrousel()
     {
-    return '<button class="bouton__ouvrir">Ouvrir</button>
+    return '
         <div class="carrousel">
-        <button class="bouton__x">X</button>
-        <figure class="carrousel__figure"></figure>
-        <form class="carrousel__form"></form>
+        <div class="btn_gauche"></div><div class="btn_droite"></div>
+        <button class="bouton_x">X</button>
+        <figure class="carrousel_figure"></figure>
+        <form class="carrousel_form"></form>
         </div>';
     }  
     
