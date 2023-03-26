@@ -1,0 +1,165 @@
+(function(){
+    // fonction IFEE
+    console.log('début du carrousel')
+
+    
+    
+let elmCarrousel = document.querySelector(".carrousel");
+  let elmCarrousel_x = document.querySelector(".bouton_x");
+  let elmGalerie = document.querySelector(".galerie");
+  let elmGalerie_img = elmGalerie.querySelectorAll(".wp-block-image img");
+  let elmCarrousel_figure = document.querySelector(".carrousel_figure");
+  let elmCarrousel_form = document.querySelector(".carrousel_form");
+  let img_carrousel = document.querySelector(".carrousel_img");
+
+  let elmNavGauche = document.querySelector(".btn_gauche");
+  let elmNavDroite = document.querySelector(".btn_droite");
+
+  elmNavGauche.addEventListener("click", function () {
+    console.log("gauche");
+    activer_image(index_precedent - 1);
+  });
+
+  elmNavDroite.addEventListener("click", function () {
+    console.log("droite");
+    activer_image(index_precedent + 1);
+  });
+
+  console.log(elmGalerie_img.length);
+
+  console.log(img_carrousel);
+
+  for (images of elmGalerie_img) {
+    images.addEventListener("click", function (event) {
+      if (!elmCarrousel.classList.contains("carrousel--ouvrir")) {
+        elmCarrousel.classList.add("carrousel--ouvrir");
+        ajouter_carrousel(event);
+      }
+    });
+  }
+
+  document.querySelectorAll;
+
+  elmCarrousel_x.addEventListener("mousedown", function () {
+    elmCarrousel.classList.remove("carrousel--ouvrir");
+    enlever_carrousel();
+    enlever_radio();
+    index = 0;
+    index_click = 0;
+  });
+
+  
+
+  index_click = 0;
+
+  function ajouter_carrousel(event) {
+    for (i = 0; i < elmGalerie_img.length; i++) {
+      ajouter_img(elmGalerie_img[i], i, event); //ajout l'image dans le carousel
+      ajouter_radio();
+      console.log("index-click = " + index_click);
+      // console.log(event.target.dataset.index);
+      console.log(event.target.getAttribute("src"));
+    }
+    let radCarrousel = document.querySelector(
+      `input[name=radCarrousel][data-index="${index_click}"]`
+    );
+    index_precedent = index_click;
+    index = index_click;
+    radCarrousel.checked = true; // coche le bouton radio correspondant Ã  l'image affichÃ©e
+  }
+
+  function ajouter_img(elmImg, i, event) {
+    let elmCarrousel_img = document.createElement("img");
+    elmCarrousel_img.setAttribute("src", elmImg.getAttribute("src"));
+    elmCarrousel_img.classList.add("carrousel_img");
+    elmCarrousel_img.dataset.index = index;
+    elmCarrousel_figure.appendChild(elmCarrousel_img);
+
+    if (
+      elmCarrousel_img.getAttribute("src") == event.target.getAttribute("src")
+    ) {
+      index_click = i;
+      elmCarrousel_figure.children[i].classList.add("carrousel_img--activer");
+      // activer_image(index);
+
+      console.log(index);
+    }
+  }
+
+  let index = 0;
+  let index_precedent = -1;
+
+  function ajouter_radio() {
+    let elmCarrousel_radio = document.createElement("input");
+    elmCarrousel_radio.setAttribute("type", "radio");
+    elmCarrousel_radio.setAttribute("name", "radCarrousel");
+    elmCarrousel_radio.dataset.index = index;
+    index++;
+
+    elmCarrousel_form.appendChild(elmCarrousel_radio);
+
+    elmCarrousel_radio.addEventListener("mousedown", function () {
+      activer_image(this.dataset.index);
+      this.checked = true;
+      index = this.dataset.index;
+      console.log(index);
+    });
+  }
+
+  function enlever_radio() {
+    let elmCarrousel_radio = document.querySelectorAll(
+      "input[name=radCarrousel]"
+    );
+
+    for (carrousel of elmCarrousel_radio) {
+      carrousel.remove();
+;
+    }
+  }
+
+  function enlever_carrousel() {
+    let carrousel_a_enlever = document.querySelectorAll(".carrousel_img");
+
+    for (images of carrousel_a_enlever) {
+      images.remove();
+    }
+
+    index_click = 0;
+    index = 0;
+    index_precedent = -1;
+  }
+
+  function activer_image(index) {
+    if (index >= elmCarrousel_figure.children.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = elmCarrousel_figure.children.length - 1;
+    }
+
+    if (index_precedent != -1) {
+      elmCarrousel_figure.children[index_precedent].classList.remove(
+        "carrousel_img--activer"
+      );
+    }
+    let reset_classe = document.querySelectorAll(".carrousel_img");
+    for (images of reset_classe) {
+      images.classList.remove("carrousel_img--activer");
+    }
+
+    console.log(index);
+    elmCarrousel_figure.children[index].classList.add("carrousel_img--activer");
+    index_precedent = index;
+
+    let radCarrousel = document.querySelector(
+      `input[name=radCarrousel][data-index="${index}"]`
+    );
+    radCarrousel.checked = true; 
+
+    console.log("Index activer image = " + index);
+    console.log("Index activer image_precedent = " + index_precedent);
+    index = parseInt(index);
+    index_precedent = parseInt(index_precedent);
+  }
+})();
