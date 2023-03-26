@@ -1,0 +1,150 @@
+.menusearch {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+  @media screen and (min-width: 1000px) {
+    .menusearch {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  
+  .menu-entete-container {
+    flex-grow: 1;
+  }
+  
+  .menu-entete-container,
+  .recherche {
+    flex-wrap: wrap;
+  }
+  .menu-entete-container .menu,
+  .recherche .menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0px;
+    flex-direction: row;
+    min-height: 10vh;
+  }
+  .menu-entete-container .menu,
+  .recherche .menu {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 720px) {
+    .menu-entete-container .recherche,
+    .menu-entete-container .menu-entete-container,
+    .recherche .recherche,
+    .recherche .menu-entete-container {
+      display: flex;
+    }
+    .menu-entete-container .menu,
+    .recherche .menu {
+      flex-direction: row;
+    }
+  }
+  .menu-entete-container .menu-item,
+  .recherche .menu-item {
+    flex: 1 0 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-entete-container .menu-item a,
+  .recherche .menu-item a {
+    white-space: nowrap;
+    padding: 3px 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13pt;
+    color:white;
+  }
+  .menu-entete-container .menu-item a:hover,
+  .recherche .menu-item a:hover {
+    color: beige;
+  }
+  
+
+  .menu-31w-container ul {
+    padding: 0px;
+  }
+  
+  .menu-cours-container .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  @media screen and (min-width: 1000px) {
+    .menu-cours-container .menu {
+      flex-direction: column;
+    }
+  }
+  .menu-cours-container .menu .menu-item {
+    list-style-type: none;
+  }
+  .menu-cours-container .menu .menu-item a .cours_titre {
+    display: none;
+  }
+  @media screen and (min-width: 1000px) {
+    .menu-cours-container .menu .menu-item a .cours_titre {
+      display: block;
+    }
+  }
+  
+  
+
+@media screen and (min-width: 720px) {
+    .burger {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    #chkBurger:checked ~ .menu-entete-container {
+      display: none;
+    }
+    #chkBurger:checked ~ .recherche {
+      display: none;
+    }
+    #chkBurger:not(:checked) ~ .recherche {
+      display: block;
+    }
+    .burger {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 720px) and (min-width: 720px) {
+    .burger {
+      display: none;
+    }
+  }
+  .logomenu {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  .logomenu p {
+    color: #fff7ec;
+  }
+  @media screen and (min-width: 720px) {
+    .logomenu {
+      flex-flow: row;
+    }
+  }
+  
+  .logomenu a img {
+    display: none;
+  }
+  @media screen and (min-width: 720px) {
+    .logomenu a img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }

@@ -1,0 +1,32 @@
+.recherche {
+    article {
+        margin-bottom: 20px;
+
+        h5 {
+            font-size: 24px;
+            margin-bottom: 10px;
+
+            a {
+                text-decoration: none;
+                color: #333;
+                transition: color 0.2s ease-in-out;
+
+                &:hover {
+                    color: #007bff;
+                }
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+}
